@@ -19,9 +19,12 @@ Acceptance Criteria:
 
 const makePrompt = (simpleTaskText) => {
   const prompt = `Assume you are a project manager and describing a task to a software developer in an easy and understandable way.
-    Improve the following simple task description by elaborating on it and structuring it using the template below. 
-    (Briefly describe the task, Description, Update or implement, Conditions, Acceptance Criteria) 
-    from the provided text. If some information is missing, indicate it within the brackets.
+Improve the following simple task description by elaborating on it and structuring it using the template below.
+Try to infer the different sections of the template (Briefly describe the task, Description, Update or implement, Conditions, Acceptance Criteria) from the provided text.
+If some information is missing, indicate it within the brackets.
+
+❗ Only respond with the completed task description using the template below. Do not add any extra comments or introductions.
+
 
     Simple Task Text:
     ${simpleTaskText}
@@ -140,10 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         ],
         //   TODO: we will add settings for temperature and maxOutputTokens
-        //   generationConfig: {
-        //     temperature: 0.7,
-        //     maxOutputTokens: 800
-        //   }
+          generationConfig: {
+            temperature: 0.2,
+            // maxOutputTokens: 800
+          }
       };
 
       // Construct the API URL
