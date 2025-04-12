@@ -88,8 +88,11 @@
       background-color: #fce8e6;
       color: #c5221f;
     }
-    .response {
+    .response-container {
       margin-top: 15px;
+      position: relative;
+    }
+    .response {
       border: 1px solid #dadce0;
       border-radius: 4px;
       padding: 10px;
@@ -99,6 +102,29 @@
       white-space: pre-wrap;
       font-size: 14px;
       background-color: #f8f9fa;
+    }
+    .copy-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ffffff;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .copy-button:hover {
+      background-color: #f1f3f4;
+    }
+    .copy-icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
     }
     .config-warning {
       background-color: #fef7e0;
@@ -130,7 +156,12 @@
   
   <button id="submitButton" class="submit">Send to Gemini</button>
   
-  <div id="response" class="response"></div>
+  <div class="response-container">
+    <div id="response" class="response"></div>
+    <button id="copyButton" class="copy-button" style="display: none;">
+      Copy
+    </button>
+  </div>
   
   <script src="popup.js"></script>
 </body>
