@@ -5,7 +5,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      width: 350px;
+      width: 500px;
       padding: 15px;
       margin: 0;
     }
@@ -46,7 +46,7 @@
       border: 1px solid #dadce0;
       border-radius: 4px;
       font-size: 14px;
-      min-height: 150px;
+      min-height: 100px;
       resize: vertical;
       font-family: Arial, sans-serif;
     }
@@ -74,7 +74,7 @@
       cursor: not-allowed;
     }
     .status {
-      margin-top: 15px;
+      margin: 15px 0;
       padding: 10px;
       border-radius: 4px;
       display: none;
@@ -120,6 +120,8 @@
   <div id="configWarning" class="config-warning">
     Please configure your API key and model in settings before using the extension.
   </div>
+
+  <div id="status" class="status"></div>
   
   <div class="input-group">
     <label for="taskDetails">Task Details:</label>
@@ -128,7 +130,6 @@
   
   <button id="submitButton" class="submit">Send to Gemini</button>
   
-  <div id="status" class="status"></div>
   <div id="response" class="response"></div>
   
   <script src="popup.js"></script>

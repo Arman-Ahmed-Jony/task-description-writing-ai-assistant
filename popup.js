@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
           // Show success message
-          showStatus('Request successful!', 'success');
+        //   showStatus('Request successful!', 'success');
           
           // Display the response
           if (data.candidates && data.candidates[0] && data.candidates[0].content) {
