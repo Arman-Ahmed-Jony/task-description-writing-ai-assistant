@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gemini API Extension</title>
+  <title>Gemini API Settings</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,21 +13,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     h2 {
       color: #1a73e8;
       margin: 0;
     }
-    .settings-button {
+    .back-button {
       background: none;
       border: none;
       cursor: pointer;
       color: #5f6368;
-      font-size: 20px;
-      padding: 5px;
+      font-size: 16px;
     }
-    .settings-button:hover {
+    .back-button:hover {
       color: #1a73e8;
     }
     .input-group {
@@ -39,22 +38,19 @@
       font-weight: bold;
       color: #202124;
     }
-    textarea {
+    input, select {
       width: 100%;
       padding: 10px;
       box-sizing: border-box;
       border: 1px solid #dadce0;
       border-radius: 4px;
       font-size: 14px;
-      min-height: 150px;
-      resize: vertical;
-      font-family: Arial, sans-serif;
     }
-    textarea:focus {
+    input:focus, select:focus {
       outline: none;
       border-color: #1a73e8;
     }
-    button.submit {
+    button.save {
       background-color: #1a73e8;
       color: white;
       border: none;
@@ -66,12 +62,8 @@
       font-size: 14px;
       transition: background-color 0.2s;
     }
-    button.submit:hover {
+    button.save:hover {
       background-color: #1557b0;
-    }
-    button.submit:disabled {
-      background-color: #80abd7;
-      cursor: not-allowed;
     }
     .status {
       margin-top: 15px;
@@ -88,49 +80,40 @@
       background-color: #fce8e6;
       color: #c5221f;
     }
-    .response {
-      margin-top: 15px;
-      border: 1px solid #dadce0;
-      border-radius: 4px;
-      padding: 10px;
-      max-height: 200px;
-      overflow-y: auto;
-      display: none;
-      white-space: pre-wrap;
-      font-size: 14px;
-      background-color: #f8f9fa;
-    }
-    .config-warning {
-      background-color: #fef7e0;
-      color: #804d0d;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-      font-size: 13px;
-      display: none;
+    .note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #5f6368;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h2>Gemini AI Assistant</h2>
-    <button class="settings-button" id="settingsButton" title="Settings"><img src="settings-icon.png" alt="Settings"></button>
-  </div>
-  
-  <div id="configWarning" class="config-warning">
-    Please configure your API key and model in settings before using the extension.
+    <h2>Settings</h2>
+    <button class="back-button" id="backButton">Back</button>
   </div>
   
   <div class="input-group">
-    <label for="taskDetails">Task Details:</label>
-    <textarea id="taskDetails" placeholder="Describe what you want Gemini to do"></textarea>
+    <label for="apiKey">Gemini API Key:</label>
+    <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
   </div>
   
-  <button id="submitButton" class="submit">Send to Gemini</button>
+  <div class="input-group">
+    <label for="model">Model:</label>
+    <select id="model">
+      <option value="">Select a model</option>
+      <option value="gemini-2.0-flash">Gemini 2 Flash</option>
+    </select>
+  </div>
+  
+  <button id="saveButton" class="save">Save Settings</button>
   
   <div id="status" class="status"></div>
-  <div id="response" class="response"></div>
   
-  <script src="popup.js"></script>
+  <div class="note">
+    <p>Your API key is stored locally on your device and is never sent to any server other than Google's Gemini API.</p>
+  </div>
+  
+  <script src="settings.js"></script>
 </body>
 </html>

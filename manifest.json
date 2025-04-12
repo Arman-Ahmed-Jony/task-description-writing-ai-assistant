@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Gemini API Assistant",
+    "name": "Gemini AI Assistant",
     "version": "1.0",
     "description": "Access Gemini AI models with your API key",
     "action": {
@@ -11,6 +11,7 @@
         "128": "icon128.png"
       }
     },
+    "options_page": "settings.html",
     "permissions": [
       "storage"
     ],
